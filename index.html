@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Virtual Wardrobe Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="min-h-screen w-full bg-canvas text-ink">
+        <!-- Toast notifications (bottom-centre) -->
+        <ol id="toaster" aria-live="polite" aria-label="Notifications"></ol>
+
+        <!-- Header (rendered by script.js) -->
+        <header id="app-header" class="border-b border-line bg-canvas"></header>
+
+        <main id="main" class="mx-auto grid max-w-[1840px] gap-6 px-4 py-8 sm:px-8 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[360px_minmax(0,1fr)_420px]">
+          <!-- Staff console (visible when "staff" is selected) -->
+          <section id="staff-panel" class="x-staff" data-mview="profile" aria-label="Staff console"></section>
+
+          <!-- Left column: client -->
+          <div class="x-col order-2 space-y-6 lg:col-span-2 lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0 xl:order-1 xl:col-span-1 xl:block xl:space-y-6">
+            <section id="client-profile" data-mview="profile" class="rounded-2xl border border-line bg-panel p-6" aria-labelledby="client-name"></section>
+            <section id="colour-panel" data-mview="profile" class="divide-y divide-line rounded-2xl border border-line bg-panel" aria-label="Client style profile"></section>
+            <section id="upload-garment" data-mview="profile" class="rounded-2xl border border-line bg-panel p-6" aria-labelledby="upload-title"></section>
+          </div>
+
+          <!-- Middle column: wardrobe + drawers -->
+          <div class="x-col order-1 min-w-0 space-y-6 xl:order-2">
+            <section id="wardrobe-panel" data-mview="wardrobe" class="rounded-2xl border border-line bg-panel" aria-labelledby="wardrobe-title"></section>
+            <section id="accessory-drawer" data-mview="wardrobe" class="rounded-2xl border border-line bg-panel"></section>
+            <section id="shoe-drawer" data-mview="wardrobe" class="rounded-2xl border border-line bg-panel"></section>
+          </div>
+
+          <!-- Right column: styling area + chat -->
+          <div class="x-col order-1 min-w-0 space-y-6 xl:order-3">
+            <section id="styling-area" data-mview="outfit" class="rounded-2xl border border-line bg-panel" aria-labelledby="styling-title"></section>
+            <section id="chat-panel" data-mview="chat" class="flex h-[620px] flex-col rounded-2xl border border-line bg-panel" aria-label="Chat with client"></section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <nav id="mobile-tabs" class="x-tabs" aria-label="Views"></nav>
+
+    <script src="assets.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
