@@ -1,4 +1,4 @@
-# The Styling Studio — v5 (plain HTML / CSS / JS)
+# The Styling Studio — v6 (plain HTML / CSS / JS)
 
 Files: index.html, style.css, script.js, assets.js (embedded photos), images/ (same photos as files)
 
@@ -32,3 +32,12 @@ Staff edits live until the page is reloaded (nothing is saved to a server).
 - Shoes: use a photo where both shoes are level, side by side.
 - Photos on a plain light/grey background get cut out automatically. Busy backgrounds stay as a
   rectangle (the app says "Original background kept").
+
+## v6 changes (found on the live Wix test)
+- Narrow centre column (iframe ~1280px wide): garment details now stack, no more overlapping sliders.
+- Mobile tab bar moved to the TOP (it used to sit at the bottom of the iframe, out of sight).
+
+## Wix iframe settings that work best
+- Desktop: iframe full width, height 2400px, no left/right margin, section background #0b0a09.
+- Mobile: iframe width 375 (X = 0, do not drag it sideways), height 2500px.
+- Delete the template footer text ("(c) 2035 by Business Name ...") before sharing.
